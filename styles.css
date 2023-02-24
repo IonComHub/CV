@@ -1,17 +1,158 @@
-* {
-  margin:0px;
-  padding:0px;
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,100&display=swap");
+
+html {
+  box-sizing: content-box;
 }
 
-#octocat {
-  display: block;
-  width:384px;
-  margin: 50px auto;
+body {
+  background-color: rgb(43, 65, 104);
+  color: beige;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-p {
+div.static-nav-photo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8rem;
+}
+
+div.photo {
+  text-align: center;
+}
+
+img {
+  width: 150px;
+  border-radius: 50%;
+  border: 10px solid rgba(203, 187, 178, 200);
+}
+
+img {
+  --color: hsla(216, 2%, 48%, 0.991); /* the color of the border */
+  --border: 10px; /* the thickness of the border */
+  --offset: 10px; /* control the movement of the border */
+  --gap: 10px; /* the gap on hover */
+
+  border-radius: 50%;
+  cursor: pointer;
+  padding: calc(var(--border) + var(--gap));
+  border: var(--offset) solid #0000;
+  --_m: radial-gradient(
+    50% 50%,
+    #000 calc(100% - var(--offset)),
+    #0000 calc(100% - var(--border))
+  );
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  --_g: #0000 calc(99% - var(--border)),
+    var(--color) calc(100% - var(--border)) 99%, #0000;
+  --_s: var(--offset);
+  --_r: 100% 100% at;
+  background: radial-gradient(var(--_r) 0 0, var(--_g)) calc(100% + var(--_s))
+      calc(100% + var(--_s)),
+    radial-gradient(var(--_r) 100% 0, var(--_g)) calc(0% - var(--_s))
+      calc(100% + var(--_s)),
+    radial-gradient(var(--_r) 0 100%, var(--_g)) calc(100% + var(--_s))
+      calc(0% - var(--_s)),
+    radial-gradient(var(--_r) 100% 100%, var(--_g)) calc(0% - var(--_s))
+      calc(0% - var(--_s));
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+}
+
+img:hover {
+  --_s: 0px;
+}
+
+div.collapse {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: beige; 
+}
+
+a:visited {
+  color: peachpuff;  
+}
+
+.container-fluid a:hover {
+  text-decoration: underline;
+}
+
+nav li:hover {
+  border-bottom: 1px solid beige;
+  transition: left 250ms ease-in-out, right 250ms ease-in-out;
+  opacity: 0.5;
+  border-image: linear-gradient(beige, darkgrey) 30;
+  border-width: 4px;
+  cursor: pointer;
+}
+
+nav {
   display: block;
-  width: 400px;
-  margin: 50px auto;
-  font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  display: flex;
+  align-items: flex-start;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  color: beige;
+  padding-left: 0;
+  font-family: Tangerine;
+  font-size: 2.3rem;
+  margin-top: 0px;
+}
+
+div.container-fluid {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 200px;
+  font-family: "Lato", sans-serif;
+}
+
+.container-fluid h1 {
+  font-size: 50px;
+}
+
+.container-fluid h4 {
+  color: beige;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-size: 25px;
+}
+
+.container-fluid h4:hover {
+  text-decoration: underline;
+}
+.container-fluid ul li {
+  text-decoration: none;
+  list-style-type: none;
+  color: beige;
+}
+
+section {
+  min-height: 200px;
+}
+
+h3 {
+  color:peru;
 }
